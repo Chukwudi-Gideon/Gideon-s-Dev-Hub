@@ -47,9 +47,9 @@ export function Hero({
               </span>
             </h1>
 
-            {/* Professional subtext */}
+            {/* subtext */}
            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-sans max-w-xl leading-relaxed transition-colors">
-              Hi, I'm <strong className="text-slate-900 dark:text-white font-bold">{developerName}</strong>, a professional <strong className="text-slate-950 dark:text-slate-200 font-bold">Web Developer</strong>. I build high-performance,  polished websites using modern technologies to deliver exceptional, responsive user experiences.
+              Hi, I'm  the owner of <strong className="text-slate-900 dark:text-white font-bold">{developerName}</strong>, I am a professional <strong className="text-slate-950 dark:text-slate-200 font-bold">Web Developer</strong>. I build high-performance,  polished websites using modern technologies to deliver exceptional, responsive user experiences.
             </p>
 
             {/* Action Buttons Row */}

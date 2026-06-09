@@ -161,7 +161,7 @@ return (
                 </div>
                 <div className="flex gap-2">
                   <span className="font-bold text-indigo-600 dark:text-indigo-400">2.</span>
-                  <p><strong className="dark:text-white">Modern Craftsmanship:</strong> We build clean, high-performance layouts that look stellar on both mobile and desktop screens.</p>
+                  <p><strong className="dark:text-white">Clean Code Standards:</strong> We build clean, high-performance layouts that look stellar on both mobile and desktop screens.</p>
                 </div>
                 <div className="flex gap-2">
                   <span className="font-bold text-indigo-600 dark:text-indigo-400">3.</span>
