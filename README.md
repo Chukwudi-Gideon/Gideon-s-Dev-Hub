@@ -3,7 +3,7 @@
  This is a  high-performance responsive portfolio built with a focus on typography, fast loading speed and accessibility.
 
 
-# Live Demo link
+# Live Demo link https://gideon-s-dev-hub.vercel.app/
 ## 🚀 Tech Stack
 - **Frontend:** React, TypeScript, Tailwind CSS
 - **Icons:** Lucide React
