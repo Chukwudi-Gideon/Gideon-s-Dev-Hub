@@ -6,7 +6,7 @@
 # Live Demo link = https://gideon-s-dev-hub.vercel.app/
 ## 🚀 Tech Stack
  Frontend: React, TypeScript, Tailwind CSS
- Icons:** Lucide React
+ Icons: Lucide React
  Forms/API: Formspree API Integration
 
 ## 🛠️ Key Features
@@ -17,5 +17,7 @@
 
  Responsive Architecture: The grid layouts scales gracefully from mobile screens up to wide desktops.
 
+Contact me for more details about the project or if you want to collaborate on something similar. I am always open to new opportunities and collaborations in the web development space.
+Email: GideonDev@protonmail.com
 ## 📦 Local Setup
 Googele "How to run a React project locally" for detailed instructions on setting up a React development environment.

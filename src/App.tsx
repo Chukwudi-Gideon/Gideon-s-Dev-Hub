@@ -13,7 +13,8 @@ export default function App() {
   // --- My Information constants ---
   const developerName = `Gideon's Dev Hub`;
 
-  const developerEmail = 'lancelotchukwudi@gmail.com';
+  const developerEmail = 'GideonDev@protonmail.com';
+
   // Track the form submission network lifecycle
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
