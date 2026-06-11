@@ -7,6 +7,7 @@ import { SkillsSection } from './components/Skills-Section';
 import type {ContactMessage } from './types';
 import { INITIAL_SKILLS, PROJECTS } from './data';
 import { Code, ShieldCheck, Banknote, Camera, ChevronDown } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/react"
 export default function App() {
   // --- My Information constants ---
   const developerName = `Gideon's Dev Hub`;
