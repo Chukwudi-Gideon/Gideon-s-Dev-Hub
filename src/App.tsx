@@ -7,7 +7,8 @@ import { SkillsSection } from './components/Skills-Section';
 import type {ContactMessage } from './types';
 import { INITIAL_SKILLS, PROJECTS } from './data';
 import { Code, ShieldCheck, Banknote, Camera, ChevronDown } from 'lucide-react';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react';
+
 export default function App() {
   // --- My Information constants ---
   const developerName = `Gideon's Dev Hub`;
@@ -108,7 +109,10 @@ const toggleTheme = () => {
 };
 
   return (
+
+     
 <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+      <Analytics /> 
         {/* Navbar segment */}
       <Navbar
         developerName={developerName}
