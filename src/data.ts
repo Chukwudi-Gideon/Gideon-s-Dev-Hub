@@ -97,15 +97,14 @@ export const PROJECTS: Project[] = [
   {
     id: "job-tracker",
     title: "Job Application Tracker",
-    description: "An application for organizing job submissions, interview stages, and career offers.",
-    detailedDescription: "A streamlined pipeline manager designed to optimize the hiring lifecycle. Features a drag-and-drop workspace framework for managing applications across multiple interactive columns—tracking items cleanly through initial submissions, interview intervals, pending offers, and final rejections.",
-    category: ["React", "JavaScript"],
-    tech: ["React 19", "Tailwind CSS v4", "Context API", "Local Storage API"],
-    image: "/Project-images/Job-Application-Tracker.png",
+    description: "This is is a polished sleek, local first app built to rescue people from spreadsheet hell during a job hunt.  Instead of jumping between messy bookmarks, notes apps, and Excel files, it gives you a clean command center to track your entire hiring lifecycle from initial submission to final offer.It saves everything directly to the browser via localStorage. That means the app is instantly ready to use without requiring a complex database setup, user accounts, or backend servers.",
+category: ["React", "TypeScript", "Tailwind CSS"],
+   tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Local Storage API", "Lucide Icons"],
+    image: "/Project-images/JAJ_img.png",
     featured: true,
     typescriptReady: true,
-    liveUrl: "https://job-application-tracker-hazel-five.vercel.app/",
-    githubUrl: "https://github.com/Chukwudi-Gideon/Job-Application-Tracker"
+    liveUrl: "https://job-application-journal.vercel.app/",
+    githubUrl: "https://github.com/Chukwudi-Gideon/Job-Application-Journal"
   },
   {
     id: "client-dashboard",

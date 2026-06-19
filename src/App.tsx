@@ -136,11 +136,6 @@ const toggleTheme = () => {
     }}
   />
 
-  {/* SKILLS Matrix & Code Sandbox segment */}
-<div className="animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
-  <SkillsSection skills={INITIAL_SKILLS} />
-</div>
-</div>
 
 {/* PROJECT Grid */}
 <div className="animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
@@ -149,6 +144,13 @@ const toggleTheme = () => {
     isTypeScriptUnlocked={true}
   />
 </div>
+</div>
+
+  {/* SKILLS Matrix & Code Sandbox segment */}
+<div className="animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
+  <SkillsSection skills={INITIAL_SKILLS} />
+</div>
+
 
   {/* Contact form segment */}
 <div className="animate-fade-in [animation-duration:500ms] [animation-delay:100ms]" id="contact">

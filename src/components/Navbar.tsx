@@ -18,8 +18,8 @@ export function Navbar({
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [
     { id: 'hero', label: 'About' },
+        { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills & Tools' },
-    { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Get In Touch' }
   ];
 
@@ -44,7 +44,11 @@ export function Navbar({
               )}
             </button>
            <div className=" hidden md:flex w-8 h-8 flex items-center justify-center rounded-lg bg-indigo-600 text-white font-sans text-xs font-bold tracking-tight shadow-sm uppercase shrink-0">
-              GD
+              <img 
+      src="Project-images/apple-touch-icon.png"
+      alt="Gideon's Dev Hub Logo"
+      className="w-full h-full object-contain" 
+    />
             </div>
             <div>
              <span className="font-sans font-bold text-slate-950 dark:text-white tracking-tight block text-sm transition-colors duration-300">
