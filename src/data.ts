@@ -104,7 +104,7 @@ category: ["React", "TypeScript", "Tailwind CSS"],
   {
     id: "client-dashboard",
     title: "Freelance Client Management",
-    description: "This Client Managment is a local first productivity and financial automation dashboard built to help freelancers and agencies streamline client management, track project milestones, and automate invoicing without any complex backend overhead. By utilizing browser storage, the application operates entirely client-side to deliver instant performance and total data privacy while handling multi-currency configurations, automated tax calculations, and secure JSON data exports. Ultimately, its purpose is to provide independent professionals with a fast, secure, and entirely free-to-run workspace that simplifies day-to-day business operations while keeping absolute data ownership in the hands of the user.", 
+    description: "This Client Managment is a local first productivity and financial automation app, built to help freelancers and agencies streamline client management, track projects and automate invoicing. Ultimately, its purpose is to provide independent professionals with a fast, secure, and entirely free workspace that simplifies day to day business operations while keeping absolute data ownership in the hands of the user.", 
      category: ["React", "JavaScript", "Tailwind", "Typescript", "Vite"],
     tech: ["React 19", "Tailwind CSS v4", "Lucide React Icons", "Reactive State Management", "Vite", "Typsecript", "Javascript"],
     image: "/Project-images/Freelance-Client-Management-Dashboard.png",

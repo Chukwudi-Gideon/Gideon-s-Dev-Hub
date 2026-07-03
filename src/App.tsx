@@ -112,7 +112,7 @@ const toggleTheme = () => {
   return (
 
      
-<div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+<div className=" min-h-screen  bg-slate-50 dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
       <Analytics /> 
         {/* Navbar segment */}
       <Navbar
@@ -125,35 +125,31 @@ const toggleTheme = () => {
       
       {/**Main Layout section */}
 
-      <main>
+      <main className="flex flex-col gap-5 sm:gap-16 md:gap-20">
 
      {/* HERO Banner */}
-       <div className="animate-fade-in-up [animation-duration:600ms] [animation-timing-function:ease-out]">
+       <div  className=" -mt-5  animate-fade-in-up [animation-duration:600ms] [animation-timing-function:ease-out]">
   <Hero
     developerName={developerName}
     onExploreProjects={() => {
       document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
     }}
   />
-
-
 {/* PROJECT Grid */}
-<div className="animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
+<div className="-mt-15 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
   <PortfolioProjects
     projects={PROJECTS}
     isTypeScriptUnlocked={true}
   />
 </div>
 </div>
-
   {/* SKILLS Matrix & Code Sandbox segment */}
-<div className="animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
+<div className=" -mt-15 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
   <SkillsSection skills={INITIAL_SKILLS} />
 </div>
 
-
   {/* Contact form segment */}
-<div className="animate-fade-in [animation-duration:500ms] [animation-delay:100ms]" id="contact">
+<div className="-mt-16 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]" id="contact">
    <ContactForm
             developerEmail={developerEmail}
             onSendMessage={handleSendMessage}

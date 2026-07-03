@@ -12,7 +12,7 @@ export function PortfolioProjects({
   return (
     <section 
       id="projects" 
-      className="py-24 bg-slate-50/50 border-b border-slate-200 transition-colors duration-300 dark:bg-slate-950/40 dark:border-slate-900"
+      className="py-20 bg-slate-50/50 border-b border-slate-200 transition-colors duration-300 dark:bg-slate-950/40 dark:border-slate-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

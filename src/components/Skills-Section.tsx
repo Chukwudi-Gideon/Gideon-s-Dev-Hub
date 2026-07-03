@@ -38,7 +38,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
   return (
     <section 
       id="skills" 
-      className="py-24 bg-white border-b border-slate-200/60 transition-colors duration-300 dark:bg-slate-950 dark:border-slate-900"
+      className=" py-10 bg-white border-b border-slate-200/60 transition-colors duration-300 dark:bg-slate-950 dark:border-slate-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -109,10 +109,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
 
                     {/* Percentage badge and help */}
                    <div>
-  <div className="text-right text-xs font-mono font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1">
- 
-  
-      <button
+ <button
         type="button"
         onClick={() => window.open(sk.docUrl, '_blank')}
         title="Open Documentation"
@@ -123,14 +120,10 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
       </button>
    
   </div>
-</div>
 
                   </div>
 
-                  {/* Simple Fluid Progress line */}
-                  <div className="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-4 overflow-hidden border border-slate-200/30 dark:border-slate-700/30">
-                    
-                  </div>
+                
                 </div>
               );
             })}

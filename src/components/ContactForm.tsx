@@ -62,7 +62,7 @@ const handleCopy = async () => {
 return (
     <section 
       id="contact" 
-      className="py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/50 transition-colors duration-300"
+      className="py-10 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/50 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
