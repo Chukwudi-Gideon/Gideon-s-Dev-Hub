@@ -1,9 +1,8 @@
 export interface Skill {
   name: string;
   category: 'frontend' | 'backend' | 'styling' | 'language' | 'tools';
-  level: number; // 0 to 100
   unlocked: boolean;
-  docUrl: string; // official documentation URL
+  docUrl: string;
   description: string;
 }
 

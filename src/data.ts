@@ -4,7 +4,6 @@ export const INITIAL_SKILLS: Skill[] = [
   {
     name: "HTML5",
     category: "language",
-    level: 95,
     unlocked: true,
     docUrl: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     description: "Semantic structures, SEO optimization, and web accessibility (a11y) standards."
@@ -12,7 +11,6 @@ export const INITIAL_SKILLS: Skill[] = [
   {
     name: "CSS3 / Tailwind",
     category: "styling",
-    level: 90,
     unlocked: true,
     docUrl: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     description: "Highly responsive layouts, clean Flexbox/Grid structures, variables, fluid typography, and premium micro-interactions."
@@ -20,7 +18,6 @@ export const INITIAL_SKILLS: Skill[] = [
   {
     name: "JavaScript",
     category: "language",
-    level: 85,
     unlocked: true,
     docUrl: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     description: "Asynchronous workflows, ES6+ array manipulation, DOM modeling, closures, and modular engineering."
@@ -28,7 +25,6 @@ export const INITIAL_SKILLS: Skill[] = [
   {
     name: "React",
     category: "frontend",
-    level: 80,
     unlocked: true,
     docUrl: "https://react.dev/",
     description: "Declarative UI rendering, hooks lifecycle management, interactive local state flow, and modular components."
@@ -36,7 +32,6 @@ export const INITIAL_SKILLS: Skill[] = [
   {
     name: "TypeScript",
     category: "language",
-    level: 85,
     unlocked: true,
     docUrl: "https://www.typescriptlang.org/docs/",
     description: "Static typing, advanced interfaces, type-safe compiler checks, and robust autocompilation setups."
@@ -44,11 +39,11 @@ export const INITIAL_SKILLS: Skill[] = [
   {
     name: "Git & GitHub",
     category: "tools",
-    level: 80,
     unlocked: true,
     docUrl: "https://docs.github.com/en/get-started",
     description: "Version control branching pipelines, clean pull request reviews, and continuous Integration deployment workflows."
   },
+   /* 
   {
     name: 'Node.js',
     category: 'backend',
@@ -89,7 +84,7 @@ export const INITIAL_SKILLS: Skill[] = [
     docUrl: "https://www.freecodecamp.org/news/what-is-full-stack-development/",
     description: 'Architecting end-to-end applications by bridging frontend component layers with secure backend APIs.'
   }
-
+*/
 ];
 
 
@@ -99,7 +94,7 @@ export const PROJECTS: Project[] = [
     title: "Job Application Tracker",
     description: "This is is a polished sleek, local first app built to rescue people from spreadsheet hell during a job hunt.  Instead of jumping between messy bookmarks, notes apps, and Excel files, it gives you a clean command center to track your entire hiring lifecycle from initial submission to final offer.It saves everything directly to the browser via localStorage. That means the app is instantly ready to use without requiring a complex database setup, user accounts, or backend servers.",
 category: ["React", "TypeScript", "Tailwind CSS"],
-   tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Local Storage API", "Lucide Icons"],
+   tech: ["React", "TypeScript", "Javascript", "Vite", "Tailwind CSS", "Local Storage API", "Lucide Icons"],
     image: "/Project-images/JAJ_img.png",
     featured: true,
     typescriptReady: true,
@@ -108,16 +103,15 @@ category: ["React", "TypeScript", "Tailwind CSS"],
   },
   {
     id: "client-dashboard",
-    title: "Client Management Dashboard",
-    description: "A professional business operations manager tracking corporate client listings, projects, and revenue metrics.",
-    detailedDescription: "An administrative intelligence hub built to monitor high-level freelance workflows. Integrates core state tracking for managing ongoing customer accounts, open milestones, dynamic invoicing structures, payment collection records, and high-visibility analytics panels.",
-    category: ["React", "JavaScript"],
-    tech: ["React 19", "Tailwind CSS v4", "Lucide React Icons", "Reactive State Management"],
+    title: "Freelance Client Management",
+    description: "This Client Managment is a local first productivity and financial automation dashboard built to help freelancers and agencies streamline client management, track project milestones, and automate invoicing without any complex backend overhead. By utilizing browser storage, the application operates entirely client-side to deliver instant performance and total data privacy while handling multi-currency configurations, automated tax calculations, and secure JSON data exports. Ultimately, its purpose is to provide independent professionals with a fast, secure, and entirely free-to-run workspace that simplifies day-to-day business operations while keeping absolute data ownership in the hands of the user.", 
+     category: ["React", "JavaScript", "Tailwind", "Typescript", "Vite"],
+    tech: ["React 19", "Tailwind CSS v4", "Lucide React Icons", "Reactive State Management", "Vite", "Typsecript", "Javascript"],
     image: "/Project-images/Freelance-Client-Management-Dashboard.png",
     featured: true,
     typescriptReady: true,
-    liveUrl: "https://freelance-client-management-dashboa.vercel.app/",
-     githubUrl: "https://github.com/Chukwudi-Gideon/Freelance-Client-Management-Dashboard"
+    liveUrl: "https://fc-management-dashboard.vercel.app/",
+     githubUrl: "https://github.com/Chukwudi-Gideon/FC-Management-Dashboard"
   },
   {
     id: "artisan-marketplace",

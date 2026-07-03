@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import type { Skill } from '../types';
-import { BookOpen,Lock } from 'lucide-react';
+import { BookOpen} from 'lucide-react';
 
 interface SkillsSectionProps {
   skills: Skill[];
@@ -83,15 +83,11 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
           {/* List Skill Render */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {filteredSkills.map((sk) => {
-                const isLocked = sk.level === 0;
+             
               return (
                 <div 
                   key={sk.name}
-                 className={`bg-white border rounded-xl p-5 border-slate-200/80 transition-all duration-300 dark:bg-slate-900 dark:border-slate-800/80 ${
-  isLocked
-    ? 'opacity-70 cursor-not-allowed filter grayscale-[30%]' 
-    : 'hover:border-indigo-300 shadow-sm hover:shadow-md hover:shadow-indigo-50/20 hover:translate-y-[-2px] dark:hover:border-indigo-500/50 dark:hover:shadow-indigo-950/10'
-}`}
+                 className="bg-white border rounded-xl p-5 border-slate-200/80 transition-all duration-300 dark:bg-slate-900 dark:border-slate-800/80"
                >
                   <div className="flex items-start justify-between">
                     <div>
@@ -114,13 +110,8 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
                     {/* Percentage badge and help */}
                    <div>
   <div className="text-right text-xs font-mono font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1">
-    <span>{sk.level}%</span>
-    {sk.unlocked === false ? (
-      <Lock 
-        className="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 ml-1 inline-block " 
-        aria-label="Not yet started" 
-      />
-    ) : (
+ 
+  
       <button
         type="button"
         onClick={() => window.open(sk.docUrl, '_blank')}
@@ -130,7 +121,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
       >
         <BookOpen className="w-3.5 h-3.5" />
       </button>
-    )}
+   
   </div>
 </div>
 
@@ -138,10 +129,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
 
                   {/* Simple Fluid Progress line */}
                   <div className="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-4 overflow-hidden border border-slate-200/30 dark:border-slate-700/30">
-                    <div 
-                      className="h-full bg-slate-900 dark:bg-indigo-500 transition-all duration-1000"
-                      style={{ width: `${sk.level}%` }}
-                    ></div>
+                    
                   </div>
                 </div>
               );
