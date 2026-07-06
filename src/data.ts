@@ -89,19 +89,19 @@ export const INITIAL_SKILLS: Skill[] = [
 
 
 export const PROJECTS: Project[] = [
-  {
-    id: "job-tracker",
-    title: "Job Application Tracker",
-    description: "This is is a polished sleek, local first app built to rescue people from spreadsheet hell during a job hunt.  Instead of jumping between messy bookmarks, notes apps, and Excel files, it gives you a clean command center to track your entire hiring lifecycle from initial submission to final offer.It saves everything directly to the browser via localStorage. That means the app is instantly ready to use without requiring a complex database setup, user accounts, or backend servers.",
-category: ["React", "TypeScript", "Tailwind CSS"],
-   tech: ["React", "TypeScript", "Javascript", "Vite", "Tailwind CSS", "Local Storage API", "Lucide Icons"],
-    image: "/Project-images/JAJ_img.png",
-    featured: true,
-    typescriptReady: true,
-    liveUrl: "https://job-application-journal.vercel.app/",
-    githubUrl: "https://github.com/Chukwudi-Gideon/Job-Application-Journal"
+    {
+    id: "artisan-marketplace",
+    title: "Artisan Marketplace",
+    description: "A regional discovery service platform matching retail consumers with local service providers and craft profiles. The app combines a customer-facing directory, artisan portals, quote requests, and lightweight local persistence so it can be explored without a full production backend.",
+  category: ["TypeScript", "Tailwind CSS", "Vite", "React"],
+    tech: ["TypeScript","Vite" ,"React Router","Firebase Authentication" ,"Firebase"," Authentication, Firestore","and Storage","Tailwind CSS","Lucide React"," React Hook Form"],
+    image: "/Project-images/Local-Artisan-Marketplace.png",
+    featured: false,
+    typescriptReady: false,
+      liveUrl: "https://arti-technologies-inc.vercel.app/",
+     githubUrl: "https://github.com/Chukwudi-Gideon/Arti-Technologies-inc"
   },
-  {
+    {
     id: "client-dashboard",
     title: "Freelance Client Management",
     description: "This Client Managment is a local first productivity and financial automation app, built to help freelancers and agencies streamline client management, track projects and automate invoicing. Ultimately, its purpose is to provide independent professionals with a fast, secure, and entirely free workspace that simplifies day to day business operations while keeping absolute data ownership in the hands of the user.", 
@@ -114,18 +114,18 @@ category: ["React", "TypeScript", "Tailwind CSS"],
      githubUrl: "https://github.com/Chukwudi-Gideon/FC-Management-Dashboard"
   },
   {
-    id: "artisan-marketplace",
-    title: "Local Artisan Marketplace",
-    description: "A regional discovery service platform matching retail consumers with local service providers and craft profiles.",
-    detailedDescription: "A community-focused marketplace workspace allowing users to index and source neighborhood contractors. Equipped with a dynamic keyword search index, structured artisan media galleries, and a multi-input portal for processing and logging custom quote requests.",
-    category: ["JavaScript", "CSS"],
-    tech: ["Vanilla ES6 JavaScript", "Tailwind Layout Grid", "Semantic HTML5 Markup", "Forms Validation API"],
-    image: "/Project-images/Local-Artisan-Marketplace.png",
-    featured: false,
-    typescriptReady: false,
-      liveUrl: "https://local-artisan-marketplace-theta.vercel.app/",
-     githubUrl: "https://github.com/Chukwudi-Gideon/Local-Artisan-Marketplace"
-  }
-];
+    id: "job-tracker",
+    title: "Job Application Tracker",
+    description: "This is is a polished sleek, local first app built to rescue people from spreadsheet hell during a job hunt.  Instead of jumping between messy bookmarks, notes apps, and Excel files, it gives you a clean command center to track your entire hiring lifecycle from initial submission to final offer.It saves everything directly to the browser via localStorage. That means the app is instantly ready to use without requiring a complex database setup, user accounts, or backend servers.",
+category: ["React", "TypeScript", "Tailwind CSS"],
+   tech: ["React", "TypeScript", "Javascript", "Vite", "Tailwind CSS", "Local Storage API", "Lucide Icons"],
+    image: "/Project-images/JAJ_img.png",
+    featured: true,
+    typescriptReady: true,
+    liveUrl: "https://job-application-journal.vercel.app/",
+    githubUrl: "https://github.com/Chukwudi-Gideon/Job-Application-Journal"
+  },
 
+
+];
 
