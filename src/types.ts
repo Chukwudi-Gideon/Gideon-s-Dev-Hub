@@ -6,10 +6,29 @@ export interface Skill {
   description: string;
 }
 
-export interface CodeSnippet {
-  js: string;
-  ts: string;
+ export interface TimelineItem{
+  id: number,
+  period: string,
+  organization:string;
+  title: string,
+  type: "education" | "experience"| "course",
+
+  certifications?:{
+    name: string,
+    url: string
+  }[],
+  description: string
+ }
+
+ export interface BlogPost {
+  id: number;
+  title: string;
   description: string;
+  category: string;
+  date: string;
+  readTime: string;
+  slug: string;
+  featured?: boolean;
 }
 
 export interface Project {
@@ -25,6 +44,13 @@ export interface Project {
   featured: boolean;
   typescriptReady: boolean;
 }
+ 
+export interface sliderProject {
+  id: number,
+  image: string,
+  title?: string
+}
+
 
 export interface ContactMessage {
   id: string;

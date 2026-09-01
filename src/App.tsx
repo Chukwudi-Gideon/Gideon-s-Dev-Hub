@@ -1,9 +1,13 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { PortfolioProjects} from './components/Portfolio-Projects';
 import { ContactForm } from './components/ContactForm';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SkillsSection } from './components/Skills-Section';
+import { Blog } from './components/Blog'
+import { ExperienceEducation } from './components/Experience-Education-Section';
 import type {ContactMessage } from './types';
 import { INITIAL_SKILLS, PROJECTS } from './data';
 import { Code, ShieldCheck, Banknote, Camera, ChevronDown } from 'lucide-react';
@@ -11,7 +15,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   // --- My Information constants ---
-  const developerName = `Gideon's Dev Hub`;
+  const developerName = `Chukwudi Gideon`;
 
   const developerEmail = 'GideonDev@protonmail.com';
 
@@ -55,7 +59,7 @@ const handleSendMessage = async (newMsg: ContactMessage) => {
 
     // Handle active scroll intersection tracking via modern high performance IntersectionObserver API with optimized trigger zones for better UX and performance
   useEffect(() => {
-    const sections = ['hero', 'skills', 'projects', 'contact'];
+    const sections = ['hero', 'skills', 'projects', 'contact', 'experience', 'blog' ];
     
     const observerOptions = {
       root: null,
@@ -82,45 +86,16 @@ const handleSendMessage = async (newMsg: ContactMessage) => {
   }, []);
 
 
-  const [isDark, setIsDark] = useState(() => {
-  //  Checks  if the user previously saved a preference
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    return savedTheme === 'dark';
-  }
-  // Fall back to their system/OS setting if no saved preference
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-});
-
-// Syncing state to the actual DOM and localStorage for persistence across sessions
-useEffect(() => {
-  const root = window.document.documentElement;
-  
-  if (isDark) {
-    root.classList.add('dark');
-    localStorage.setItem('theme', 'dark'); // Save choice for next visit
-  } else {
-    root.classList.remove('dark');
-    localStorage.setItem('theme', 'light'); // Save choice for next visit
-  }
-}, [isDark]);
-
-const toggleTheme = () => {
-  setIsDark(prev => !prev);
-};
-
   return (
 
      
-<div className=" min-h-screen  bg-slate-50 dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
-      <Analytics /> 
+<div className="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+      <Analytics />
         {/* Navbar segment */}
       <Navbar
         developerName={developerName}
         activeSection={activeSection}
         setActiveSection={setActiveSection}
-        isDark={isDark}
-        toggleTheme={toggleTheme}
       />
       
       {/**Main Layout section */}
@@ -142,12 +117,19 @@ const toggleTheme = () => {
     isTypeScriptUnlocked={true}
   />
 </div>
+{/* EXPERIENCE & EDUCATION Timeline */}
+<div className="-mt-15 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
+  <ExperienceEducation />
 </div>
-  {/* SKILLS Matrix & Code Sandbox segment */}
+</div>
+  {/* SKILLs */}
 <div className=" -mt-15 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
   <SkillsSection skills={INITIAL_SKILLS} />
 </div>
 
+<div className=" -mt-15 animate-fade-in [animation-duration:500ms] animation-delay:100ms">
+    <Blog />
+</div>
   {/* Contact form segment */}
 <div className="-mt-16 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]" id="contact">
    <ContactForm
