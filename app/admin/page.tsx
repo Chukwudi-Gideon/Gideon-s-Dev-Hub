@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server"
-
+import LogoutButton from "@/components/Admin-LogOutBtn";
 
 export default async function AdminDashboard() {
     const  supabase = await createClient();
@@ -17,8 +17,10 @@ export default async function AdminDashboard() {
             </h1>
 
             <p className="mt-2 text-slate-600">
-        Welcome back, {user.email}
+        There you are Chukwudi 
             </p>
+
+            <LogoutButton />
         </main>
     )
 }
