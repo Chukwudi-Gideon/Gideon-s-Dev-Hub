@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import posthog from "posthog-js";
 import { supabase } from "@/lib/supabase";
-
 
 export default function AdminLogin() {
     const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ export default function AdminLogin() {
 
         setError("");
 
-        const { error }  = await supabase.auth.signInWithPassword({
+        const { data, error }  = await supabase.auth.signInWithPassword({
             email,
             password
         });
@@ -24,16 +24,21 @@ export default function AdminLogin() {
             return;
         }
 
-       window.location.href = "/admin"
-
-     
+        if (data.user) {
+           posthog.identify(
+             data.user.id,
+             data.user.email ? { email: data.user.email } : {},
+           );
+           posthog.capture('admin_login_succeeded');
+           window.location.href = "/admin";
+        }
     }
        return (
-        <main className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
+        <main className="min-h-screen flex items-center justify-center bg-slate-400 px-4">
 
             <form 
             onSubmit={handleLogin} 
-            className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+            className="w-full max-w-md rounded-2xl border border-slate-300 bg-white p-8 shadow-sm"
             >
 
                 <h1 className="text-2xl font-semibold text-slate-950">

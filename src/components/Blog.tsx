@@ -1,5 +1,6 @@
 import { ArrowRight, Clock3 } from "lucide-react";
 import type { BlogPost } from "../types";
+import posthog from 'posthog-js';
 
 const posts: BlogPost[] = [
   {
@@ -94,6 +95,7 @@ export function Blog() {
 
               <a
                 href={`/blog/${featuredPost.slug}`}
+                onClick={() => posthog.capture('blog_post_opened', { post_id: featuredPost.id, category: featuredPost.category })}
                 className="inline-flex items-center gap-2 mt-7 text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors"
               >
                 Read article
@@ -140,6 +142,7 @@ export function Blog() {
 
               <a
                 href={`/blog/${post.slug}`}
+                onClick={() => posthog.capture('blog_post_opened', { post_id: post.id, category: post.category })}
                 className="inline-flex items-center gap-2 mt-auto pt-7 text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors"
               >
                 Read article

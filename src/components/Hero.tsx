@@ -2,6 +2,7 @@ import { ArrowRight, ExternalLink, Mail } from 'lucide-react';
 import type { sliderProject } from '@/types';
 import { useEffect, useState } from 'react';
 import  Image  from 'next/image';
+import posthog from 'posthog-js';
 
 interface HeroProps {
   developerName: string;
@@ -72,7 +73,10 @@ useEffect(()=> {
 
             <div className="flex flex-wrap gap-4 items-center pt-2">
               <button
-                onClick={onExploreProjects}
+                onClick={() => {
+                  posthog.capture('portfolio_cta_clicked', { cta: 'browse_projects' });
+                  onExploreProjects();
+                }}
                 className="inline-flex items-center justify-center px-4 py-4 rounded-xl bg-amber-200 text-slate-700 font-bold text-xs uppercase tracking-wider hover:bg-amber-300 transition-all shadow-md shadow-indigo-500/10 cursor-pointer active:scale-[0.98]"
               >
                 <span>Browse Portfolio Projects</span>
@@ -83,6 +87,7 @@ useEffect(()=> {
   href="/Chukwudi-Gideon-Njoku-Resume.pdf"
   target="_blank"
   rel="noopener noreferrer"
+  onClick={() => posthog.capture('portfolio_cta_clicked', { cta: 'resume' })}
  className='inline-flex items-center gap-2 text-base  font-medium text--500 hover:text-slate-950 transition-colors '
   >
 
@@ -91,6 +96,7 @@ useEffect(()=> {
 </div>
               <button
                 onClick={() => {
+                  posthog.capture('portfolio_cta_clicked', { cta: 'contact' });
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="inline-flex items-center justify-center px-4 py-3.5 rounded-xl border gap-2 border-slate-200 bg-indigo-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-indigo-700  transition-all shadow-sm cursor-pointer active:scale-[0.98]"

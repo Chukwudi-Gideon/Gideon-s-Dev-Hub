@@ -12,6 +12,7 @@ import type {ContactMessage } from './types';
 import { INITIAL_SKILLS, PROJECTS } from './data';
 import { Code, ShieldCheck, Banknote, Camera, ChevronDown } from 'lucide-react';
 import { Analytics } from '@vercel/analytics/react';
+import posthog from 'posthog-js';
 
 export default function App() {
   // --- My Information constants ---
@@ -39,6 +40,7 @@ const handleSendMessage = async (newMsg: ContactMessage) => {
     });
 
     if (response.ok) {
+    posthog.capture('contact_message_submitted');
     setFormStatus('success');
     setTimeout(() => setFormStatus('idle'), 5000);
     } else {
@@ -191,6 +193,7 @@ const handleSendMessage = async (newMsg: ContactMessage) => {
   <a 
     href="https://chukwudi-gideon.github.io/My-Gallery/" 
     target="_blank"
+    onClick={() => posthog.capture('gallery_opened')}
     className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800 text-slate-200 text-sm font-semibold rounded-xl transition-all duration-300 group cursor-pointer"
   >
     <Camera className="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform" />

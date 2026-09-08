@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Mail, Send, Check, User, Building, MessageSquare, Copy } from 'lucide-react';
 import type { ContactMessage } from '../types';
+import posthog from 'posthog-js';
 
 interface ContactFormProps {
   developerEmail: string;
@@ -28,6 +29,7 @@ export function ContactForm({
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(myEmail);
+      posthog.capture('contact_email_copied');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -100,6 +102,7 @@ export function ContactForm({
                     <a
                       href={`mailto:${developerEmail}?subject=${emailSubject}&body=${emailBody}`}
                       title="Open default email app"
+                      onClick={() => posthog.capture('contact_channel_selected', { channel: 'email' })}
                       className="group/link flex flex-wrap items-center gap-x-1.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition break-all mt-0.5 italic"
                     >
                       <span className="font-bold text-indigo-600 no-underline group-hover/link:text-indigo-700 transition-colors">
@@ -124,6 +127,7 @@ export function ContactForm({
                 </div>
                 <a
                   href={`mailto:${developerEmail}?subject=${emailSubject}&body=${emailBody}`}
+                  onClick={() => posthog.capture('contact_channel_selected', { channel: 'email' })}
                   className="self-end sm:self-auto flex items-center justify-center p-2 rounded-xl bg-white border border-slate-200 text-slate-400 group-hover:text-indigo-600 group-hover:border-indigo-200 shadow-sm transition-all animate-bounce [animation-duration:2s] shrink-0"
                 >
                   <Send className="w-3.5 h-3.5" />
@@ -141,7 +145,7 @@ export function ContactForm({
                     <span className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                       Send a direct message via whatsapp
                     </span>
-                    <a href="https://wa.link/ix9sny" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-slate-900 hover:text-indigo-600 transition italic">
+                    <a href="https://wa.link/ix9sny" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('contact_channel_selected', { channel: 'whatsapp' })} className="text-sm font-semibold text-slate-900 hover:text-indigo-600 transition italic">
                       Click to Chat Instantly on Whatsapp
                     </a>
                   </div>
@@ -150,6 +154,7 @@ export function ContactForm({
                   href="https://wa.link/ix9sny"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => posthog.capture('contact_channel_selected', { channel: 'whatsapp' })}
                   className="self-end sm:self-auto flex items-center justify-center p-2 rounded-xl bg-white border border-slate-200 text-slate-400 group-hover:text-emerald-500 transition-all animate-bounce [animation-duration:2s] shrink-0"
                 >
                   <Send className="w-3.5 h-3.5" />
@@ -167,7 +172,7 @@ export function ContactForm({
                     <span className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                       Send a direct message via telegram
                     </span>
-                    <a href="https://t.me/GideonsDev" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-slate-900 hover:text-indigo-600 transition italic">
+                    <a href="https://t.me/GideonsDev" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('contact_channel_selected', { channel: 'telegram' })} className="text-sm font-semibold text-slate-900 hover:text-indigo-600 transition italic">
                       Click to Chat Instantly on Telegram
                     </a>
                   </div>
@@ -176,6 +181,7 @@ export function ContactForm({
                   href="https://t.me/GideonsDev"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => posthog.capture('contact_channel_selected', { channel: 'telegram' })}
                   className="self-end sm:self-auto flex items-center justify-center p-2 rounded-xl bg-white border border-slate-200 text-slate-400 group-hover:text-sky-500 transition-all animate-bounce [animation-duration:2s] shrink-0"
                 >
                   <Send className="w-3.5 h-3.5" />
