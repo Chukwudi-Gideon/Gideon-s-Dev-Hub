@@ -19,7 +19,11 @@ useEffect(() => {
             return;
         }
 
-        posthog.identify(user.id, user.email ? { email: user.email } : {});
+        const isLiveDeployment = process.env.NODE_ENV === "production" && typeof window !== "undefined" && !["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+        if (isLiveDeployment) {
+            posthog.identify(user.id, user.email ? { email: user.email } : {});
+        }
     }
 
     void checkAuth();
@@ -32,8 +36,13 @@ async function handleLogout(){
         return;
     }
 
-    posthog.capture('admin_logged_out');
-    posthog.reset();
+    const isLiveDeployment = process.env.NODE_ENV === "production" && typeof window !== "undefined" && !["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+    if (isLiveDeployment) {
+        posthog.capture('admin_logged_out');
+        posthog.reset();
+    }
+
     router.push("/admin/login");
     router.refresh();
 } 

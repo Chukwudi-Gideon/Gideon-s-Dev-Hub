@@ -8,21 +8,25 @@ import { Hero } from './components/Hero';
 import { SkillsSection } from './components/Skills-Section';
 import { Blog } from './components/Blog'
 import { ExperienceEducation } from './components/Experience-Education-Section';
-import type {ContactMessage } from './types';
-import { INITIAL_SKILLS, PROJECTS } from './data';
+import type {ContactMessage, Skill, BlogPost,Project } from './types';
+
 import { Code, ShieldCheck, Banknote, Camera, ChevronDown } from 'lucide-react';
 import { Analytics } from '@vercel/analytics/react';
 import posthog from 'posthog-js';
 
-export default function App() {
-  // --- My Information constants ---
-  const developerName = `Chukwudi Gideon`;
 
+interface AppProps {
+  projects: Project[];
+  skills: Skill[];
+  posts: BlogPost[];
+}
+
+export default function App({projects, skills, posts}: AppProps) {
+  const developerName = `Chukwudi Gideon`;
   const developerEmail = 'GideonDev@protonmail.com';
 
-  // Track the form submission network lifecycle
-  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 // Send messages inbox to Email via Formspree API
 const handleSendMessage = async (newMsg: ContactMessage) => {
 
@@ -115,7 +119,7 @@ const handleSendMessage = async (newMsg: ContactMessage) => {
 {/* PROJECT Grid */}
 <div className="-mt-15 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
   <PortfolioProjects
-    projects={PROJECTS}
+    projects={projects}
     isTypeScriptUnlocked={true}
   />
 </div>
@@ -126,11 +130,11 @@ const handleSendMessage = async (newMsg: ContactMessage) => {
 </div>
   {/* SKILLs */}
 <div className=" -mt-15 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]">
-  <SkillsSection skills={INITIAL_SKILLS} />
+  <SkillsSection skills={skills} />
 </div>
 
 <div className=" -mt-15 animate-fade-in [animation-duration:500ms] animation-delay:100ms">
-    <Blog />
+    <Blog posts={posts}/>
 </div>
   {/* Contact form segment */}
 <div className="-mt-16 animate-fade-in [animation-duration:500ms] [animation-delay:100ms]" id="contact">

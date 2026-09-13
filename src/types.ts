@@ -1,9 +1,11 @@
 export interface Skill {
+  id: number;
+  created_at: string;
   name: string;
-  category: 'frontend' | 'backend' | 'styling' | 'language' | 'tools';
+  category: string;
   unlocked: boolean;
-  docUrl: string;
   description: string;
+  display_order: number;
 }
 
  export interface TimelineItem{
@@ -24,9 +26,8 @@ export interface Skill {
   id: number;
   title: string;
   description: string;
-  category: string;
-  date: string;
-  readTime: string;
+  published_at: string;
+  read_time: string;
   slug: string;
   featured?: boolean;
 }
@@ -35,12 +36,9 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  detailedDescription?: string;
-  category: string[];
-  tech: string[];
-  image: string;
-  liveUrl?: string;
-  githubUrl?: string; // GitHub url
+  image_url: string;
+  live_url?: string;
+  github_url: string; // GitHub url
   featured: boolean;
   typescriptReady: boolean;
 }

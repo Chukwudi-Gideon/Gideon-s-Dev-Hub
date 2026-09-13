@@ -25,11 +25,16 @@ export default function AdminLogin() {
         }
 
         if (data.user) {
-           posthog.identify(
-             data.user.id,
-             data.user.email ? { email: data.user.email } : {},
-           );
-           posthog.capture('admin_login_succeeded');
+           const isLiveDeployment = process.env.NODE_ENV === "production" && typeof window !== "undefined" && !["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+           if (isLiveDeployment) {
+             posthog.identify(
+               data.user.id,
+               data.user.email ? { email: data.user.email } : {},
+             );
+             posthog.capture('admin_login_succeeded');
+           }
+
            window.location.href = "/admin";
         }
     }

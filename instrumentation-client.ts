@@ -1,22 +1,24 @@
 import posthog from "posthog-js"
 
-const token = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN
-const host = process.env.NEXT_PUBLIC_POSTHOG_HOST
+const isProductionDeployment = () => {
+  if (typeof window === "undefined") return false;
 
-if (!token || !host) {
-  if (process.env.NODE_ENV === "development") {
-    const variable = !token
-      ? "NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN"
-      : "NEXT_PUBLIC_POSTHOG_HOST"
-    throw new Error(
-      `${variable} variable required by PostHog is missing or un-configured, this causes events to be silently missed. This error stops appearing once ${variable} is configured`,
-    )
-  }
-} else {
+  const hostname = window.location.hostname;
+  const isLocalHost = hostname === "localhost" || hostname === "127.0.0.1" || hostname.endsWith(".local");
+
+  return process.env.NODE_ENV === "production" && !isLocalHost;
+};
+
+const token = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN;
+const host = process.env.NEXT_PUBLIC_POSTHOG_HOST;
+
+if (isProductionDeployment() && token && host) {
   posthog.init(token, {
     api_host: host,
     defaults: "2026-01-30",
     capture_exceptions: true,
-    debug: process.env.NODE_ENV === "development",
-  })
+    debug: false,
+  });
+} else {
+  posthog.opt_out_capturing();
 }

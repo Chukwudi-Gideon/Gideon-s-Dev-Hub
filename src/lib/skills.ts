@@ -1,10 +1,10 @@
 import { createClient } from "@/lib/supabase-server";
 
-export async function getProjects() {
+export async function getSkills() {
   const supabase = await createClient();
 
   const { data, error } = await supabase
-    .from("projects")
+    .from("skills")
     .select("*")
     .order("display_order", { ascending: true });
 

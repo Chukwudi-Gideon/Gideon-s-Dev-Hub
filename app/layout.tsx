@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body>
         {children}
-        <Analytics />
+        <Analytics debug={false}/>
       </body>
     </html>
   );

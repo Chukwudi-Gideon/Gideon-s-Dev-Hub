@@ -10,7 +10,6 @@ interface HeroProps {
 }
 
 export function Hero({
-  developerName,
   onExploreProjects,
 }: HeroProps) {
 
@@ -107,17 +106,51 @@ useEffect(()=> {
             </div>
 
             <div className="pt-8 border-t border-slate-200/80">
-              <span className="text-xs font-mono font-bold tracking-widest text-slate-400 block uppercase mb-3">
-                CURRENT TECH  STACK
-              </span>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1.5 rounded-lg bg-orange-50 text-orange-700 text-xs font-mono border border-orange-100 font-semibold">HTML5</span>
-                <span className="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-mono border border-blue-100 font-semibold">CSS3 & Tailwind</span>
-                <span className="px-3 py-1.5 rounded-lg bg-yellow-50 text-amber-800 text-xs font-mono border border-yellow-100 font-semibold">JavaScript</span>
-                <span className="px-3 py-1.5 rounded-lg bg-sky-50 text-sky-800 text-xs font-mono border border-sky-100 font-semibold">React</span>
-                <span className="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-800 text-xs font-mono border border-indigo-100 font-semibold">TypeScript</span>
-              </div>
-            </div>
+  <span className="text-xs font-mono font-bold tracking-widest text-slate-400 block uppercase mb-3">
+  A GLIMPSE AT MY TOOLKIT
+  </span>
+
+  <div className="flex flex-wrap gap-2">
+    <span className="px-3 py-1.5 rounded-lg bg-sky-50 text-sky-800 text-xs font-mono border border-sky-100 font-semibold">
+      React
+    </span>
+
+    <span className="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-800 text-xs font-mono border border-slate-200 font-semibold">
+      Next.js
+    </span>
+
+    <span className="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-800 text-xs font-mono border border-indigo-100 font-semibold">
+      TypeScript
+    </span>
+
+    <span className="px-3 py-1.5 rounded-lg bg-yellow-50 text-amber-800 text-xs font-mono border border-yellow-100 font-semibold">
+      JavaScript
+    </span>
+
+    <span className="px-3 py-1.5 rounded-lg bg-cyan-50 text-cyan-800 text-xs font-mono border border-cyan-100 font-semibold">
+      Component based and Utility first CSS
+    </span>
+
+    <span className="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 text-xs font-mono border border-emerald-100 font-semibold">
+      Supabase
+    </span>
+    <span className="px-3 py-1.5 rounded-lg bg-violet-50 text-violet-700 text-xs font-mono border border-violet-100 font-semibold">
+  API Integration
+</span>
+
+<span className="px-3 py-1.5 rounded-lg bg-orange-50 text-orange-700 text-xs font-mono border border-orange-100 font-semibold">
+  Firebase
+</span>
+
+<span className="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-mono border border-emerald-100 font-semibold">
+  Responsive Web Design
+</span>
+
+<span className="px-3 py-1.5 rounded-lg bg-rose-50 text-rose-700 text-xs font-mono border border-rose-100 font-semibold">
+  Authentication
+</span>
+  </div>
+</div>
           </div>
 
           {/** Space for sliding image logic and code */}

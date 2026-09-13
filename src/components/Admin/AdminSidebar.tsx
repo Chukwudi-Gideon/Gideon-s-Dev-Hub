@@ -5,62 +5,41 @@ import LogoutButton from "./Admin-LogOutBtn";
 
 export default function AdminSidebar() {
   return (
-    <aside className="w-64 min-h-screen border-r border-slate-200 bg-slate-700 p-6">
-      <div className="mb-8">
+    <aside className="max-w-5xl w-full mx-auto my-10 flex flex-col items-center justify-center border-slate-200  p-6">
+      <div className=" text-center">
         <h1 className="text-xl font-bold text-slate-950">
-          Portfolio Admin
+         Welcome back Boss!
         </h1>
-
-        <p className="mt-1 text-sm text-slate-500">
-          My portfolio Management
-        </p>
+      
+        <p className="text-sm text-neutral-500 mt-1">
+            Go ahead and make an update
+          </p>
       </div>
 
-      <nav className="space-y-2">
-        <Link
-          href="/admin"
-          className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100"
-        >
-          Dashboard
-        </Link>
-
+      <nav className="flex flex-wrap justify-center gap-4">
         <Link
           href="/admin/projects"
-          className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100"
+          className="block rounded-lg px-3 py-2 text-md font-medium hover:bg-slate-700 bg-slate-600 my-4 text-white"
         >
           Projects
         </Link>
 
         <Link
           href="/admin/blog"
-          className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100"
+          className="block rounded-lg px-3 py-2 text-md font-medium hover:bg-slate-700 bg-slate-600 my-4 text-white"
         >
           Blog
         </Link>
 
         <Link
           href="/admin/skills"
-          className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100"
+          className="block rounded-lg px-3 py-2 text-md font-medium hover:bg-slate-700 bg-slate-600 my-4 text-white"
         >
           Skills
         </Link>
-
-        <Link
-          href="/admin/experience"
-          className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100"
-        >
-          Experience & Education
-        </Link>
-
-        <Link
-          href="/admin/cv"
-          className="block rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100"
-        >
-          CV
-        </Link>
       </nav>
 
-      <div className="mt-10">
+      <div className="mt-5 text-center w-full">
         <LogoutButton />
       </div>
     </aside>

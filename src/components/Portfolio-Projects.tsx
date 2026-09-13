@@ -20,7 +20,7 @@ export function PortfolioProjects({
               Featured Projects
             </h2>
             <p className="mt-2 text-sm text-slate-500 font-sans leading-relaxed">
-              Explore a curated selection of development projects. Demonstrating high standards of implementation using modern libraries.
+              Explore some of my skillfully and carefully development projects. Demonstrating high standards of implementation using modern libraries.
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export function PortfolioProjects({
                   <div className="h-48 relative overflow-hidden bg-slate-50 border-b border-slate-100">
                     <img
                       referrerPolicy="no-referrer"
-                      src={p.image}
+                      src={p.image_url}
                       alt={p.title}
                       className="w-full h-full object-cover transition duration-300 hover:scale-105"
                     />
@@ -48,27 +48,17 @@ export function PortfolioProjects({
                       {p.title}
                     </h3>
 
-                    <p className="text-xs text-slate-500 font-sans leading-relaxed">
+                    <p className="text-xs text-slate-500 font-mono leading-relaxed">
                       {p.description}
                     </p>
                   </div>
                 </div>
 
                 <div className="px-6 pb-6 pt-2 border-t border-slate-50">
-                  <div className="flex flex-wrap gap-1 mb-6">
-                    {p.tech.map((badge) => (
-                      <span
-                        key={badge}
-                        className="text-[9px] bg-slate-50 border border-slate-200 text-slate-600 px-2 py-0.5 rounded font-mono font-semibold"
-                      >
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
-
+                  
                   <div className="grid grid-cols-2 gap-2.5 pt-2">
                     <a
-                      href={(p as any).liveUrl || '#'}
+                      href={(p as any).live_url || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => posthog.capture('portfolio_project_opened', { project_id: p.id, destination: 'live' })}
@@ -78,7 +68,7 @@ export function PortfolioProjects({
                     </a>
 
                     <a
-                      href={(p as any).githubUrl || '#'}
+                      href={(p as any).github_url || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => posthog.capture('portfolio_project_opened', { project_id: p.id, destination: 'codebase' })}
