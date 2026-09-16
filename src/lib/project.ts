@@ -8,6 +8,9 @@ export async function getProjects() {
     .select("*")
     .order("display_order", { ascending: true });
 
+  console.log("PRODUCTION PROJECT DATA:", data);
+  console.log("PRODUCTION PROJECT ERROR:", error);
+
   if (error) {
     throw new Error(error.message);
   }
