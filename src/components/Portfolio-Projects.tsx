@@ -10,7 +10,6 @@ interface PortfolioProjectsProps {
 export function PortfolioProjects({
   projects,
 }: PortfolioProjectsProps) {
-  // Light mode only: dark theme styling was intentionally removed.
   return (
     <section id="projects" className="py-20 bg-slate-50/50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
